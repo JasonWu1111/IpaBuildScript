@@ -30,7 +30,7 @@ PROJECT="{项目工程文件}" #e.g."DemoApp.xcodeproj"
 ```
 脚本打包是依靠 **xcodebuild** 命令实现的，主要的命令行有三条，实现了 Xcode 打包的各个步骤：
 1、**Clean**
-```
+```shell
 xcodebuild clean -workspace ${WORK_SPACE}\
                  -scheme ${APP_NAME}\
                  -configuration ${CONFIGURATION}
@@ -38,7 +38,7 @@ xcodebuild clean -workspace ${WORK_SPACE}\
 # CONFIGURATION 参数可选择： Debug，Release
 ```
 2、**Archive**
-```
+```shell
 ARCHIVE_PATH="./${PACKAGE_NAME}/${APP_NAME}.xcarchive"
 xcodebuild archive -workspace ${WORK_SPACE}\
                    -scheme ${APP_NAME}\
@@ -47,7 +47,7 @@ xcodebuild archive -workspace ${WORK_SPACE}\
 # 如果无workspace，可将此命令中 "-workspace ${WORK_SPACE}" 替换为 "-project ${PROJECT}"
 ```
 3、**Export**
-```
+```shell
 # 替换Export.plist中的export方法为指定的方法，METHOD 参数可选择：development，adhoc，app-store，enterprise
 sed -i '' "s/{method}/${METHOD}/g" ${EXPORT_PLIST}
 EXPORT_PATH="./${PACKAGE_NAME}/${APP_NAME}"
@@ -58,7 +58,7 @@ xcodebuild -exportArchive\
            -allowProvisioningUpdates
 ```
 其中 EXPORT_PLIST 对应的是一个必须的 plist 文件，该文件包含了分发的方式、签名、是否压缩等信息，因此需要在当前目录里新建一个 Export.plist 文件，内容如下：
-```
+```html
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
