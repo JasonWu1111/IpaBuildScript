@@ -14,7 +14,7 @@ WORK_SPACE="{workspace工程文件}" #e.g."DemoApp.xcworkspace"
 PROJECT="{项目工程文件}" #e.g."DemoApp.xcodeproj"
 ```
 
-2、打开 ``Export.plist``，更改其 {teamId} 自己账号的 id
+2、打开 ``Export.plist``，更改其 {teamId} 为自己账号的 teamId
 
 ## 使用
 ```shell
