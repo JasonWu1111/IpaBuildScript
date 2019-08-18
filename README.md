@@ -1,19 +1,4 @@
 # IpaBuildScript
-ios 打包步骤相对于 Android 来说稍显麻烦，先看一下在 Xcode 上打包的流程：
-## Xcode 打包步骤
-1、打开 **Product -> Scheme -> Edit Scheme**，选择 Archive 的 Build Configuration 为 Debug 或者 Release：
-
-![](https://upload-images.jianshu.io/upload_images/7599887-ccb7c66225f9a42f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/750)
-
-2、点击 **Product -> Archive** 开始归档，归档完成后选择分发应用，然后选择分发的方式、签名、是否压缩等，选择完成后开始处理分发前的归档包：
-
-![](https://upload-images.jianshu.io/upload_images/7599887-73164e13d2d89631.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/750)
-
-3、归档包预处理完成后选择路径，导出最终的 ipa 包相关文件：
-
-![](https://upload-images.jianshu.io/upload_images/7599887-8baba49fb5e8cdb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/750)
-
-可以说整个流程步骤比较繁琐，所以打包流程如果能够通过脚本来一步到位实现将会节省很多的功夫，因此特意呈上一份比较完整的 ios ipa 打包 shell 脚本！
 ## 脚本打包步骤
 首先配置一些常量
 ```
